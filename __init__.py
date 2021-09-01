@@ -1,9 +1,10 @@
+import copy
 import logging
 import sys
-import colorama
-import copy
 
+import colorama
 import jmespath
+from auth
 
 LOG_COLORS = {
     logging.DEBUG: colorama.Fore.WHITE,
@@ -30,8 +31,8 @@ class ColorFormatter(logging.Formatter):
 def _create_handler_steam():
     handler = logging.StreamHandler(stream=sys.stdout)
     formatter = ColorFormatter("%(levelname)s | %(asctime)s | %(message)s", "%H:%M:%S")
-    #formatter = ColorFormatter("%(levelname)s %(threadName)s %(module)s %(funcName)s -> %(message)s")
-    #self.steam_handler_format = logging.Formatter("%(levelname)s %(funcName)s -> %(message)s")
+    # formatter = ColorFormatter("%(levelname)s %(threadName)s %(module)s %(funcName)s -> %(message)s")
+    # self.steam_handler_format = logging.Formatter("%(levelname)s %(funcName)s -> %(message)s")
     handler.setFormatter(formatter)
     handler.setLevel(logging.DEBUG)
     return handler
@@ -39,7 +40,7 @@ def _create_handler_steam():
 
 def _create_handler_rabbit(self, filename):
     with open('')
-    login = jmespath.search("services.rabbitmq.login", project.configdata)
+        login = jmespath.search("services.rabbitmq.login", project.configdata)
     password = jmespath.search("services.rabbitmq.password", project.configdata)
     hostname = jmespath.search("services.rabbitmq.hostname", project.configdata)
     port = jmespath.search("services.rabbitmq.port", project.configdata)
