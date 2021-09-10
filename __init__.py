@@ -4,7 +4,10 @@ import sys
 
 import colorama
 import jmespath
-from auth
+import pika
+from python_logging_rabbitmq import RabbitMQHandler, RabbitMQHandlerOneWay
+from r00auth import config
+
 
 LOG_COLORS = {
     logging.DEBUG: colorama.Fore.WHITE,
@@ -39,11 +42,10 @@ def _create_handler_steam():
 
 
 def _create_handler_rabbit(self, filename):
-    with open('')
-        login = jmespath.search("services.rabbitmq.login", project.configdata)
-    password = jmespath.search("services.rabbitmq.password", project.configdata)
-    hostname = jmespath.search("services.rabbitmq.hostname", project.configdata)
-    port = jmespath.search("services.rabbitmq.port", project.configdata)
+    login = config.rabbitmq.login
+    password = config.rabbitmq.password
+    hostname = config.rabbitmq.hostname
+    port = config.rabbitmq.port
 
     credentials = pika.PlainCredentials(login, password)
     conn_params = pika.ConnectionParameters(hostname, port, credentials=credentials)
