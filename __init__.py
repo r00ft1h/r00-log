@@ -7,7 +7,7 @@ import jmespath
 import pika
 from python_logging_rabbitmq import RabbitMQHandler, RabbitMQHandlerOneWay
 from r00auth import config
-
+from r00
 
 LOG_COLORS = {
     logging.DEBUG: colorama.Fore.WHITE,
